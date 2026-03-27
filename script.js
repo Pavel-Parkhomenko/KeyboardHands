@@ -1,40 +1,7 @@
 'use strict';
 
-const themes = {
-  retro: document.querySelector('.retro'),
-  navyBlue: document.querySelector('.navy-blue'),
-};
-
-for (const theme in themes) {
-  themes[theme].addEventListener('click', function () {
-    changeTheme(themes[theme].className);
-  });
-}
-
-const initializeTheme = () => {
-  const savedTheme = localStorage.getItem('currentTheme');
-  if (savedTheme) changeTheme(savedTheme);
-};
-
-const changeTheme = function (themeName) {
-  // naming needs to be changed so we can access
-  // themes that exist in themes.css
-  const themeCSS = 'theme--' + themeName;
-
-  document.body.classList.remove(
-    'theme--' + localStorage.getItem('currentTheme')
-  );
-  document.body.classList.add(themeCSS);
-  localStorage.setItem('currentTheme', themeName);
-};
-
-initializeTheme();
-
-// ------------------- HANDLING KEY PRESS -------------------
 
 const handleKeyPress = function (e) {
-  console.log(e);
-
   e.preventDefault();
 
   // Detect AltGr key press (Alt + Control pressed simultaneously)
@@ -63,18 +30,45 @@ const handleKeyPress = function (e) {
     keyElement.classList.add('key--pressed');
   }
 
-  // Handle special Meta/OS key case
   if (e.key === 'Meta' || e.key === 'OS') {
     keyElement.classList.remove('key-pressing-simulation');
   }
 };
 
-document.addEventListener('keydown', handleKeyPress);
-document.addEventListener('keyup', handleKeyPress);
+
+const LANG = "ENG"
+let letters = []
+
+const printBoxText = document.querySelector('.container-text')
+
+function handleClickKey(e) {
+  e.preventDefault()
+  
+  let val = e.target.dataset.eng
+
+  if(val) {
+    letters.push(val)
+  }
+  else {
+    val = e.target.dataset.key
+    letters.push(val)
+  }
+
+  const span = document.createElement('span')
+  span.textContent = val
+  // span.className = 'eng'
+
+  printBoxText.appendChild(span);
+
+  console.log(letters)
+}
+
+document.addEventListener('keydown', handleKeyPress)
+document.addEventListener('keyup', handleKeyPress)
+document.addEventListener('click', handleClickKey);
 
 
 const slider = document.getElementById('layoutSlider');
-const output = document.querySelector('.slider-value');
 
 const fullSizeLayout = document.querySelector('.full-size-layout');
 const TKLLayout = document.querySelector('.tkl-layout');
@@ -110,15 +104,12 @@ function updateLayout() {
   // Update output text based on slider position
   switch (sliderValue) {
     case 1:
-      output.textContent = 'Full';
       changeToFullSize();
       break;
     case 2:
-      output.textContent = 'TKL';
       changeToTKL();
       break;
     case 3:
-      output.textContent = '75%';
       changeTo75();
       break;
     default:
@@ -211,7 +202,7 @@ const undo75 = () => {
 };
 
 const changeTo75 = async () => {
-  await changeToTKL(); // Wait for the transition in changeToTKL() to complete
+  await changeToTKL();
   themeAndLayout.style.maxWidth = '85rem';
   updateStylesFor75(true);
 };

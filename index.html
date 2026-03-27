@@ -19,7 +19,7 @@
     <header>
       <section class="intro">
         <h1 class="heading-primary title center-text">
-          <span>Test Your Keyboard</span>
+          <span>HKeyboard</span>
         </h1>
       </section>
     </header>
@@ -28,7 +28,6 @@
       <div class="theme-and-layout">
         <div></div>
         <div class="slider-container">
-          <output class="slider-value">Full</output>
           <input
             type="range"
             min="1"
@@ -38,68 +37,51 @@
             id="layoutSlider"
           />
         </div>
-
-        <section class="theme-section">
-          <div class="retro" aria-label="retro theme option">
-            <div class="theme-color"></div>
-            <div class="theme-color"></div>
-            <div class="theme-color"></div>
-            <div class="theme-color"></div>
-          </div>
-          <div class="navy-blue" aria-label="navy-blue theme option">
-            <div class="theme-color"></div>
-            <div class="theme-color"></div>
-            <div class="theme-color"></div>
-            <div class="theme-color"></div>
-          </div>
-        </section>
+      </div>
+ 
+      <div class="intro container-text">
+        
       </div>
 
       <div class="keyboard full-size">
-        <!-- contains "ESC" & Function (F1-F12) -->
         <section class="function region">
-          <div class="key escape">ESC</div>
+          <div data-key="ESC" class="key escape">ESC</div>
           <div class="empty-space-between-keys" aria-hidden="true"></div>
-          <div class="key f1">F1</div>
-          <div class="key f2">F2</div>
-          <div class="key f3">F3</div>
-          <div class="key f4">F4</div>
+          <div data-key="F1" class="key f1">F1</div>
+          <div data-key="F2" class="key f2">F2</div>
+          <div data-key="F3" class="key f3">F3</div>
+          <div data-key="F4" class="key f4">F4</div>
           <div class="empty-space-between-keys" aria-hidden="true"></div>
-          <div class="key f5">F5</div>
-          <div class="key f6">F6</div>
-          <div class="key f7">F7</div>
-          <div class="key f8">F8</div>
+          <div data-key="F5" class="key f5">F5</div>
+          <div data-key="F6" class="key f6">F6</div>
+          <div data-key="F7" class="key f7">F7</div>
+          <div data-key="F8" class="key f8">F8</div>
           <div class="empty-space-between-keys" aria-hidden="true"></div>
-          <div class="key f9">F9</div>
-          <div class="key f10">F10</div>
-          <div class="key f11">F11</div>
-          <div class="key f12">F12</div>
+          <div data-key="F9" class="key f9">F9</div>
+          <div data-key="F10" class="key f10">F10</div>
+          <div data-key="F11" class="key f11">F11</div>
+          <div data-key="F12" class="key f12">F12</div>
         </section>
 
-        <!-- contains Top-Located Control (Prt Sc|Scr lck|Pause) keys -->
         <section class="system-control region">
-          <div class="key printscreen key--accent-color">Prt Sc</div>
-          <div class="key scrolllock key--accent-color">Scr Lk</div>
-          <div class="key pause key--accent-color">Pause</div>
+          <div data-key="PrtSc" class="key printscreen key--accent-color">Prt Sc</div>
+          <div data-key="ScrLk" class="key scrolllock key--accent-color">Scr Lk</div>
+          <div data-key="Pause" class="key pause key--accent-color">Pause</div>
         </section>
 
-        <!-- contains Modifier/Control (Ctrl|Alt|etc.) & Alpha (A-Z) keys -->
         <section class="typewriter region">
-          <!-- number row (`, 1, 2, etc.) -->
           <div class="first-row">
-            <div class="key backquote key--sublegend key--accent-color">
-              <span>~</span> <span>`</span>
-            </div>
-            <div class="key digit1">1</div>
-            <div class="key digit2">2</div>
-            <div class="key digit3">3</div>
-            <div class="key digit4">4</div>
-            <div class="key digit5">5</div>
-            <div class="key digit6">6</div>
-            <div class="key digit7">7</div>
-            <div class="key digit8">8</div>
-            <div class="key digit9">9</div>
-            <div class="key digit0">0</div>
+            <div class="key backquote key--sublegend key--accent-color key4grig"><span>~</span> <span>`</span> <span>Ё</span></div>
+            <div class="key digit1 key2grig"><span>!</span><span>1</span></div>
+            <div class="key digit2 key4grig"><span>@</span><span>"</span><span>2</span></div>
+            <div class="key digit3 key4grig"><span>#</span><span>№</span><span>3</span></div>
+            <div class="key digit4 key4grig"><span>$</span><span>;</span><span>4</span></div>
+            <div class="key digit5 key2grig"><span>%</span><span>5</span></div>
+            <div class="key digit6 key4grig"><span>^</span><span>:</span><span>6</span></div>
+            <div class="key digit7 key4grig"><span>&</span><span>?</span><span>7</span></div>
+            <div class="key digit8 key2grig"><span>*</span><span>8</span></div>
+            <div class="key digit9 key2grig"><span>&#40;</span><span>9</span></div>
+            <div class="key digit0 key2grig"><span>&#41;</span><span>0</span></div>
             <div class="key minus key--sublegend">
               <span>&minus;</span> <span>&dash;</span>
             </div>
@@ -109,79 +91,68 @@
             <div class="key backspace key--accent-color">Backspace</div>
           </div>
 
-          <!-- qwerty row (tab, \, q, w, etc.) -->
           <div class="second-row">
             <div class="key tab key--accent-color">Tab</div>
-            <div class="key keyq">Q</div>
-            <div class="key keyw">W</div>
-            <div class="key keye">E</div>
-            <div class="key keyr">R</div>
-            <div class="key keyt">T</div>
-            <div class="key keyy">Y</div>
-            <div class="key keyu">U</div>
-            <div class="key keyi">I</div>
-            <div class="key keyo">O</div>
-            <div class="key keyp">P</div>
-            <div class="key bracketleft key--sublegend">
-              <span>&lbrace;</span> <span>&lbrack;</span>
+            <div data-ru="Й" data-eng="Q" class="key keyq key4grig"><span class="eng">Q</span><span class="ru">Й</span></div>
+            <div data-ru="Ц" data-eng="W" class="key keyw key4grig"><span class="eng">W</span><span class="ru">Ц</span></div>
+            <div data-ru="У" data-eng="E" class="key keye key4grig"><span class="eng">E</span><span class="ru">У</span></div>
+            <div data-ru="К" data-eng="R" class="key keyr key4grig"><span class="eng">R</span><span class="ru">К</span></div>
+            <div data-ru="Е" data-eng="T" class="key keyt key4grig"><span class="eng">T</span><span class="ru">Е</span></div>
+            <div data-ru="Н" data-eng="Y" class="key keyy key4grig"><span class="eng">Y</span><span class="ru">Н</span></div>
+            <div data-ru="Г" data-eng="U" class="key keyu key4grig"><span class="eng">U</span><span class="ru">Г</span></div>
+            <div data-ru="Ш" data-eng="I" class="key keyi key4grig"><span class="eng">I</span><span class="ru">Ш</span></div>
+            <div data-ru="Щ" data-eng="O" class="key keyo key4grig"><span class="eng">O</span><span class="ru">Щ</span></div>
+            <div data-ru="З" data-eng="P" class="key keyp key4grig"><span class="eng">P</span><span class="ru">З</span></div>
+            <div class="key bracketleft key--sublegend key4grig">
+              <span>&lbrace;</span> <span>&lbrack;</span> <span>X</span>
             </div>
-            <div class="key bracketright key--sublegend">
-              <span>&rbrace;</span> <span>&rbrack;</span>
+            <div class="key bracketright key--sublegend key4grig">
+              <span>&rbrace;</span> <span>&rbrack;</span> <span>Ъ</span>
             </div>
             <div class="key backslash key--sublegend key--accent-color">
-              <span>&vert;</span><span>&Backslash;</span>
+              <span>&vert;</span><span>&Backslash;</span> 
             </div>
           </div>
 
-          <!-- asdfg row (caps, enter, a, s, etc.) -->
           <div class="third-row">
             <div class="key capslock key--accent-color">Caps</div>
-            <div class="key keya">A</div>
-            <div class="key keys">S</div>
-            <div class="key keyd">D</div>
-            <div class="key keyf">F</div>
-            <div class="key keyg">G</div>
-            <div class="key keyh">H</div>
-            <div class="key keyj">J</div>
-            <div class="key keyk">K</div>
-            <div class="key keyl">L</div>
-            <div class="key semicolon key--sublegend">
-              <span>&colon;</span> <span>&semi;</span>
+            <div data-ru="Ф" data-eng="A" class="key keya key4grig"><span class="eng">A</span><span class="ru">Ф</span></div>
+            <div data-ru="Ы" data-eng="S" class="key keys key4grig"><span class="eng">S</span><span class="ru">Ы</span></div>
+            <div data-ru="В" data-eng="D" class="key keyd key4grig"><span class="eng">D</span><span class="ru">В</span></div>
+            <div data-ru="А" data-eng="F" class="key keyf key4grig"><span class="eng">F</span><span class="ru">А</span></div>
+            <div data-ru="П" data-eng="G" class="key keyg key4grig"><span class="eng">G</span><span class="ru">П</span></div>
+            <div data-ru="Р" data-eng="H" class="key keyh key4grig"><span class="eng">H</span><span class="ru">Р</span></div>
+            <div data-ru="О" data-eng="J" class="key keyj key4grig"><span class="eng">J</span><span class="ru">О</span></div>
+            <div data-ru="Л" data-eng="K" class="key keyk key4grig"><span class="eng">K</span><span class="ru">Л</span></div>
+            <div data-ru="Д" data-eng="L" class="key keyl key4grig"><span class="eng">L</span><span class="ru">Д</span></div>
+            <div class="key semicolon key--sublegend key4grig">
+              <span>&colon;</span> <span>&semi;</span> <span>Ж</span>
             </div>
-            <div class="key quote key--sublegend">
-              <span>&quot;</span> <span>&apos;</span>
+            <div class="key quote key--sublegend key4grig">
+              <span>&quot;</span> <span>&apos;</span> <span>Э</span>
             </div>
             <div class="key enter key--accent-color">
               <span>&LongLeftArrow;</span>
             </div>
           </div>
 
-          <!-- zxcvb row (left and right shift, <, >, ?, etc.) -->
           <div class="fourth-row">
             <div class="key shiftleft key--accent-color">Shift</div>
-            <div class="key keyz">Z</div>
-            <div class="key keyx">X</div>
-            <div class="key keyc">C</div>
-            <div class="key keyv">V</div>
-            <div class="key keyb">B</div>
-            <div class="key keyn">N</div>
-            <div class="key keym">M</div>
-            <div class="key comma key--sublegend">
-              <span>&lt;</span> <span>&comma;</span>
-            </div>
-            <div class="key period key--sublegend">
-              <span>&gt;</span> <span>&period;</span>
-            </div>
-            <div class="key slash key--sublegend">
-              <span>&quest;</span> <span>&sol;</span>
-            </div>
+            <div data-ru="Я" data-eng="Z" class="key keyz key4grig"><span class="eng">Z</span><span class="ru">Я</span></div>
+            <div data-ru="Ч" data-eng="X" class="key keyx key4grig"><span class="eng">X</span><span class="ru">Ч</span></div>
+            <div data-ru="С" data-eng="C" class="key keyc key4grig"><span class="eng">C</span><span class="ru">С</span></div>
+            <div data-ru="М" data-eng="V" class="key keyv key4grig"><span class="eng">V</span><span class="ru">М</span></div>
+            <div data-ru="И" data-eng="B" class="key keyb key4grig"><span class="eng">B</span><span class="ru">И</span></div>
+            <div data-ru="Т" data-eng="N" class="key keyn key4grig"><span class="eng">N</span><span class="ru">Т</span></div>
+            <div data-ru="Ь" data-eng="M" class="key keym key4grig"><span class="eng">M</span><span class="ru">Ь</span></div>
+            <div class="key comma key--sublegend key4grig"><span>&lt;</span><span>&comma;</span><span>Б</span></div>
+            <div class="key period key--sublegend key4grig"><span>&gt;</span><span>&period;</span><span>Ю</span></div>
+            <div class="key slash key--sublegend key4grig"><span>&quest;</span><span>,</span><span>.</span><span>&sol;</span></div>
             <div class="key shiftright key--accent-color">Shift</div>
           </div>
 
-          <!-- bottom row (ctrl, fn, win, alt, space, etc.) -->
           <div class="fifth-row">
             <div class="key controlleft key--accent-color">Ctrl</div>
-            <!-- Added OSLeft for firefox support -->
             <div
               class="key metaleft osleft key--accent-color"
               aria-label="Left Windows key"
@@ -201,7 +172,6 @@
               <span>&UnderBar;&UnderBar;&UnderBar;&UnderBar;</span>
             </div>
             <div class="key altright key--accent-color">Alt</div>
-            <!-- Added OSRight for firefox support -->
             <div
               class="key metaright osright key--accent-color"
               aria-label="Right Windows key"
@@ -267,7 +237,6 @@
           </div>
         </section>
 
-        <!-- contains Navigation (PgUp|PgDn|etc.) & Arrow keys -->
         <section class="navigation region">
           <div class="key insert key--accent-color">Insert</div>
           <div class="key home key--accent-color">Home</div>
@@ -325,7 +294,6 @@
           </div>
         </section>
 
-        <!-- contains Numpad Keys -->
         <section class="numpad region">
           <div class="key numlock">NumLk</div>
           <div class="key numpaddivide">/</div>
