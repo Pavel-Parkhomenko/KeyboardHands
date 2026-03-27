@@ -1,324 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KHands</title>
-    <meta
-      name="description"
-      content=""
-    />
 
-    <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/themes.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/queries.css" />
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-    <header>
-      <section class="intro">
-        <h1 class="heading-primary title center-text">
-          <span>HKeyboard</span>
-        </h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KHands</title>
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="css/general.css" />
+  <link rel="stylesheet" href="css/themes.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/queries.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header>
+    <section class="intro">
+      <h1 class="heading-primary title center-text">
+        <span>HKeyboard</span><span id="title-lang">ENG</span>
+      </h1>
+    </section>
+  </header>
+
+  <main>
+    <div class="intro theme-and-layout">
+      <div class="slider-container">
+        <input type="range" min="1" max="3" value="1" class="slider" id="layoutSlider" />
+      </div>
+    </div>
+
+    <div class="intro container-text"></div>
+
+    <div class="keyboard full-size">
+      <section class="function region">
+        <div data-key="ESC" class="key escape">ESC</div>
+        <div class="empty-space-between-keys" aria-hidden="true"></div>
+        <div data-key="F1" class="key f1">F1</div>
+        <div data-key="F2" class="key f2">F2</div>
+        <div data-key="F3" class="key f3">F3</div>
+        <div data-key="F4" class="key f4">F4</div>
+        <div class="empty-space-between-keys" aria-hidden="true"></div>
+        <div data-key="F5" class="key f5">F5</div>
+        <div data-key="F6" class="key f6">F6</div>
+        <div data-key="F7" class="key f7">F7</div>
+        <div data-key="F8" class="key f8">F8</div>
+        <div class="empty-space-between-keys" aria-hidden="true"></div>
+        <div data-key="F9" class="key f9">F9</div>
+        <div data-key="F10" class="key f10">F10</div>
+        <div data-key="F11" class="key f11">F11</div>
+        <div data-key="F12" class="key f12">F12</div>
       </section>
-    </header>
 
-    <main>
-      <div class="theme-and-layout">
-        <div></div>
-        <div class="slider-container">
-          <input
-            type="range"
-            min="1"
-            max="3"
-            value="1"
-            class="slider"
-            id="layoutSlider"
-          />
+      <section class="system-control region">
+        <div data-key="PrtSc" class="key printscreen key--accent-color">Prt Sc</div>
+        <div data-key="ScrLk" class="key scrolllock key--accent-color">Scr Lk</div>
+        <div data-key="Pause" class="key pause key--accent-color">Pause</div>
+      </section>
+
+      <section class="typewriter region">
+        <div class="first-row">
+          <div data-ru="Ё" data-eng="`" data-shift="~" class="key backquote key--sublegend key--accent-color key4grig">
+            <span>~</span> <span>`</span> <span>Ё</span>
+          </div>
+          <div class="key digit1 key2grig" data-key="1" data-shift="!">
+            <span>!</span><span>1</span>
+          </div>
+          <div class="key digit2 key4grig" data-key="2" data-shift="@">
+            <span>@</span><span>"</span><span>2</span>
+          </div>
+          <div class="key digit3 key4grig" data-key="3" data-shift="#">
+            <span>#</span><span>№</span><span>3</span>
+          </div>
+          <div class="key digit4 key4grig" data-key="4" data-shift="$;">
+            <span>$</span><span>;</span><span>4</span>
+          </div>
+          <div class="key digit5 key2grig" data-key="5" data-shift="%">
+            <span>%</span><span>5</span>
+          </div>
+          <div class="key digit6 key4grig" data-key="6" data-shift="^:">
+            <span>^</span><span>:</span><span>6</span>
+          </div>
+          <div class="key digit7 key4grig" data-key="7" data-shift="&?">
+            <span>&</span><span>?</span><span>7</span>
+          </div>
+          <div class="key digit8 key2grig" data-key="8" data-shift="*">
+            <span>*</span><span>8</span>
+          </div>
+          <div class="key digit9 key2grig" data-key="9" data-shift="(">
+            <span>&#40;</span><span>9</span>
+          </div>
+          <div class="key digit0 key2grig" data-key="0" data-shift=")">
+            <span>&#41;</span><span>0</span>
+          </div>
+          <div class="key minus key--sublegend" data-key="-" data-shift="_">
+            <span>&minus;</span> <span>&dash;</span>
+          </div>
+          <div class="key equal key--sublegend" data-shift="+" data-key="=">
+            <span>&plus;</span><span>&equals;</span>
+          </div>
+          <div class="key backspace key--accent-color" data-key="BackSpace">
+            Backspace
+          </div>
         </div>
-      </div>
- 
-      <div class="intro container-text">
-        
-      </div>
 
-      <div class="keyboard full-size">
-        <section class="function region">
-          <div data-key="ESC" class="key escape">ESC</div>
-          <div class="empty-space-between-keys" aria-hidden="true"></div>
-          <div data-key="F1" class="key f1">F1</div>
-          <div data-key="F2" class="key f2">F2</div>
-          <div data-key="F3" class="key f3">F3</div>
-          <div data-key="F4" class="key f4">F4</div>
-          <div class="empty-space-between-keys" aria-hidden="true"></div>
-          <div data-key="F5" class="key f5">F5</div>
-          <div data-key="F6" class="key f6">F6</div>
-          <div data-key="F7" class="key f7">F7</div>
-          <div data-key="F8" class="key f8">F8</div>
-          <div class="empty-space-between-keys" aria-hidden="true"></div>
-          <div data-key="F9" class="key f9">F9</div>
-          <div data-key="F10" class="key f10">F10</div>
-          <div data-key="F11" class="key f11">F11</div>
-          <div data-key="F12" class="key f12">F12</div>
-        </section>
-
-        <section class="system-control region">
-          <div data-key="PrtSc" class="key printscreen key--accent-color">Prt Sc</div>
-          <div data-key="ScrLk" class="key scrolllock key--accent-color">Scr Lk</div>
-          <div data-key="Pause" class="key pause key--accent-color">Pause</div>
-        </section>
-
-        <section class="typewriter region">
-          <div class="first-row">
-            <div class="key backquote key--sublegend key--accent-color key4grig"><span>~</span> <span>`</span> <span>Ё</span></div>
-            <div class="key digit1 key2grig"><span>!</span><span>1</span></div>
-            <div class="key digit2 key4grig"><span>@</span><span>"</span><span>2</span></div>
-            <div class="key digit3 key4grig"><span>#</span><span>№</span><span>3</span></div>
-            <div class="key digit4 key4grig"><span>$</span><span>;</span><span>4</span></div>
-            <div class="key digit5 key2grig"><span>%</span><span>5</span></div>
-            <div class="key digit6 key4grig"><span>^</span><span>:</span><span>6</span></div>
-            <div class="key digit7 key4grig"><span>&</span><span>?</span><span>7</span></div>
-            <div class="key digit8 key2grig"><span>*</span><span>8</span></div>
-            <div class="key digit9 key2grig"><span>&#40;</span><span>9</span></div>
-            <div class="key digit0 key2grig"><span>&#41;</span><span>0</span></div>
-            <div class="key minus key--sublegend">
-              <span>&minus;</span> <span>&dash;</span>
-            </div>
-            <div class="key equal key--sublegend">
-              <span>&plus;</span><span>&equals;</span>
-            </div>
-            <div class="key backspace key--accent-color">Backspace</div>
+        <div class="second-row">
+          <div class="key tab key--accent-color" data-key="Tab">Tab</div>
+          <div data-ru="Й" data-eng="Q" class="key keyq key4grig"><span class="eng">Q</span><span class="ru">Й</span>
           </div>
-
-          <div class="second-row">
-            <div class="key tab key--accent-color">Tab</div>
-            <div data-ru="Й" data-eng="Q" class="key keyq key4grig"><span class="eng">Q</span><span class="ru">Й</span></div>
-            <div data-ru="Ц" data-eng="W" class="key keyw key4grig"><span class="eng">W</span><span class="ru">Ц</span></div>
-            <div data-ru="У" data-eng="E" class="key keye key4grig"><span class="eng">E</span><span class="ru">У</span></div>
-            <div data-ru="К" data-eng="R" class="key keyr key4grig"><span class="eng">R</span><span class="ru">К</span></div>
-            <div data-ru="Е" data-eng="T" class="key keyt key4grig"><span class="eng">T</span><span class="ru">Е</span></div>
-            <div data-ru="Н" data-eng="Y" class="key keyy key4grig"><span class="eng">Y</span><span class="ru">Н</span></div>
-            <div data-ru="Г" data-eng="U" class="key keyu key4grig"><span class="eng">U</span><span class="ru">Г</span></div>
-            <div data-ru="Ш" data-eng="I" class="key keyi key4grig"><span class="eng">I</span><span class="ru">Ш</span></div>
-            <div data-ru="Щ" data-eng="O" class="key keyo key4grig"><span class="eng">O</span><span class="ru">Щ</span></div>
-            <div data-ru="З" data-eng="P" class="key keyp key4grig"><span class="eng">P</span><span class="ru">З</span></div>
-            <div class="key bracketleft key--sublegend key4grig">
-              <span>&lbrace;</span> <span>&lbrack;</span> <span>X</span>
-            </div>
-            <div class="key bracketright key--sublegend key4grig">
-              <span>&rbrace;</span> <span>&rbrack;</span> <span>Ъ</span>
-            </div>
-            <div class="key backslash key--sublegend key--accent-color">
-              <span>&vert;</span><span>&Backslash;</span> 
-            </div>
+          <div data-ru="Ц" data-eng="W" class="key keyw key4grig"><span class="eng">W</span><span class="ru">Ц</span>
           </div>
-
-          <div class="third-row">
-            <div class="key capslock key--accent-color">Caps</div>
-            <div data-ru="Ф" data-eng="A" class="key keya key4grig"><span class="eng">A</span><span class="ru">Ф</span></div>
-            <div data-ru="Ы" data-eng="S" class="key keys key4grig"><span class="eng">S</span><span class="ru">Ы</span></div>
-            <div data-ru="В" data-eng="D" class="key keyd key4grig"><span class="eng">D</span><span class="ru">В</span></div>
-            <div data-ru="А" data-eng="F" class="key keyf key4grig"><span class="eng">F</span><span class="ru">А</span></div>
-            <div data-ru="П" data-eng="G" class="key keyg key4grig"><span class="eng">G</span><span class="ru">П</span></div>
-            <div data-ru="Р" data-eng="H" class="key keyh key4grig"><span class="eng">H</span><span class="ru">Р</span></div>
-            <div data-ru="О" data-eng="J" class="key keyj key4grig"><span class="eng">J</span><span class="ru">О</span></div>
-            <div data-ru="Л" data-eng="K" class="key keyk key4grig"><span class="eng">K</span><span class="ru">Л</span></div>
-            <div data-ru="Д" data-eng="L" class="key keyl key4grig"><span class="eng">L</span><span class="ru">Д</span></div>
-            <div class="key semicolon key--sublegend key4grig">
-              <span>&colon;</span> <span>&semi;</span> <span>Ж</span>
-            </div>
-            <div class="key quote key--sublegend key4grig">
-              <span>&quot;</span> <span>&apos;</span> <span>Э</span>
-            </div>
-            <div class="key enter key--accent-color">
-              <span>&LongLeftArrow;</span>
-            </div>
+          <div data-ru="У" data-eng="E" class="key keye key4grig"><span class="eng">E</span><span class="ru">У</span>
           </div>
-
-          <div class="fourth-row">
-            <div class="key shiftleft key--accent-color">Shift</div>
-            <div data-ru="Я" data-eng="Z" class="key keyz key4grig"><span class="eng">Z</span><span class="ru">Я</span></div>
-            <div data-ru="Ч" data-eng="X" class="key keyx key4grig"><span class="eng">X</span><span class="ru">Ч</span></div>
-            <div data-ru="С" data-eng="C" class="key keyc key4grig"><span class="eng">C</span><span class="ru">С</span></div>
-            <div data-ru="М" data-eng="V" class="key keyv key4grig"><span class="eng">V</span><span class="ru">М</span></div>
-            <div data-ru="И" data-eng="B" class="key keyb key4grig"><span class="eng">B</span><span class="ru">И</span></div>
-            <div data-ru="Т" data-eng="N" class="key keyn key4grig"><span class="eng">N</span><span class="ru">Т</span></div>
-            <div data-ru="Ь" data-eng="M" class="key keym key4grig"><span class="eng">M</span><span class="ru">Ь</span></div>
-            <div class="key comma key--sublegend key4grig"><span>&lt;</span><span>&comma;</span><span>Б</span></div>
-            <div class="key period key--sublegend key4grig"><span>&gt;</span><span>&period;</span><span>Ю</span></div>
-            <div class="key slash key--sublegend key4grig"><span>&quest;</span><span>,</span><span>.</span><span>&sol;</span></div>
-            <div class="key shiftright key--accent-color">Shift</div>
+          <div data-ru="К" data-eng="R" class="key keyr key4grig"><span class="eng">R</span><span class="ru">К</span>
           </div>
-
-          <div class="fifth-row">
-            <div class="key controlleft key--accent-color">Ctrl</div>
-            <div
-              class="key metaleft osleft key--accent-color"
-              aria-label="Left Windows key"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 4875 4875"
-                aria-label="Left Windows key icon"
-              >
-                <path
-                  d="M0 0h2311v2310H0zm2564 0h2311v2310H2564zM0 2564h2311v2311H0zm2564 0h2311v2311H2564"
-                />
-              </svg>
-            </div>
-            <div class="key altleft key--accent-color">Alt</div>
-            <div class="key space key--accent-color" aria-label="Space">
-              <span>&UnderBar;&UnderBar;&UnderBar;&UnderBar;</span>
-            </div>
-            <div class="key altright key--accent-color">Alt</div>
-            <div
-              class="key metaright osright key--accent-color"
-              aria-label="Right Windows key"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 4875 4875"
-                aria-label="Right Windows key icon"
-              >
-                <path
-                  d="M0 0h2311v2310H0zm2564 0h2311v2310H2564zM0 2564h2311v2311H0zm2564 0h2311v2311H2564"
-                />
-              </svg>
-            </div>
-            <div
-              class="key contextmenu key--accent-color"
-              aria-label="Context Menu key"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 100 100"
-                aria-label="Context Menu key icon"
-              >
-                <rect
-                  x="10"
-                  y="10"
-                  width="80"
-                  height="80"
-                  rx="2"
-                  ry="2"
-                  stroke-width="7"
-                />
-                <rect
-                  x="25"
-                  y="30"
-                  width="50"
-                  height="4.5"
-                  rx="2"
-                  ry="2"
-                  stroke-width="4.5"
-                />
-                <rect
-                  x="25"
-                  y="47.5"
-                  width="50"
-                  height="4.5"
-                  rx="2"
-                  ry="2"
-                  stroke-width="4.5"
-                />
-                <rect
-                  x="25"
-                  y="65"
-                  width="50"
-                  height="4.5"
-                  rx="2"
-                  ry="2"
-                  stroke-width="4.5"
-                />
-              </svg>
-            </div>
-            <div class="key controlright key--accent-color">Ctrl</div>
+          <div data-ru="Е" data-eng="T" class="key keyt key4grig"><span class="eng">T</span><span class="ru">Е</span>
           </div>
-        </section>
+          <div data-ru="Н" data-eng="Y" class="key keyy key4grig"><span class="eng">Y</span><span class="ru">Н</span>
+          </div>
+          <div data-ru="Г" data-eng="U" class="key keyu key4grig"><span class="eng">U</span><span class="ru">Г</span>
+          </div>
+          <div data-ru="Ш" data-eng="I" class="key keyi key4grig"><span class="eng">I</span><span class="ru">Ш</span>
+          </div>
+          <div data-ru="Щ" data-eng="O" class="key keyo key4grig"><span class="eng">O</span><span class="ru">Щ</span>
+          </div>
+          <div data-ru="З" data-eng="P" class="key keyp key4grig"><span class="eng">P</span><span class="ru">З</span>
+          </div>
+            <div class="key bracketleft key--sublegend key4grig" data-ru="Х" data-eng="[" data-shift="{">
+            <span>&lbrace;</span> <span>&lbrack;</span> <span>X</span>
+          </div>
+          <div class="key bracketright key--sublegend key4grig" data-ru="Ъ" data-eng="]" data-shift="}">
+            <span>&rbrace;</span> <span>&rbrack;</span> <span>Ъ</span>
+          </div>
+          <div class="key backslash key--sublegend key--accent-color" data-key="\" data-shift="|/">
+            <span>&vert;</span><span>&Backslash;</span>
+          </div>
+        </div>
 
-        <section class="navigation region">
-          <div class="key insert key--accent-color">Insert</div>
-          <div class="key home key--accent-color">Home</div>
-          <div class="key pageup key--accent-color">Pg Up</div>
-          <div class="key delete key--accent-color">Delete</div>
-          <div class="key end key--accent-color">End</div>
-          <div class="key pagedown key--accent-color">Pg Dn</div>
-          <div class="key arrowup" aria-label="Up Arrow key">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              enable-background="new 0 0 32 32"
-              viewBox="0 0 32 32"
-              aria-label="Up Arrow"
-            >
-              <path
-                d="M18.221,7.206l9.585,9.585c0.879,0.879,0.879,2.317,0,3.195l-0.8,0.801c-0.877,0.878-2.316,0.878-3.194,0  l-7.315-7.315l-7.315,7.315c-0.878,0.878-2.317,0.878-3.194,0l-0.8-0.801c-0.879-0.878-0.879-2.316,0-3.195l9.587-9.585  c0.471-0.472,1.103-0.682,1.723-0.647C17.115,6.524,17.748,6.734,18.221,7.206z"
-              />
+        <div class="third-row">
+          <div class="key capslock key--accent-color" data-key="Caps">Caps</div>
+          <div data-ru="Ф" data-eng="A" class="key keya key4grig"><span class="eng">A</span><span class="ru">Ф</span>
+          </div>
+          <div data-ru="Ы" data-eng="S" class="key keys key4grig"><span class="eng">S</span><span class="ru">Ы</span>
+          </div>
+          <div data-ru="В" data-eng="D" class="key keyd key4grig"><span class="eng">D</span><span class="ru">В</span>
+          </div>
+          <div data-ru="А" data-eng="F" class="key keyf key4grig"><span class="eng">F</span><span class="ru">А</span>
+          </div>
+          <div data-ru="П" data-eng="G" class="key keyg key4grig"><span class="eng">G</span><span class="ru">П</span>
+          </div>
+          <div data-ru="Р" data-eng="H" class="key keyh key4grig"><span class="eng">H</span><span class="ru">Р</span>
+          </div>
+          <div data-ru="О" data-eng="J" class="key keyj key4grig"><span class="eng">J</span><span class="ru">О</span>
+          </div>
+          <div data-ru="Л" data-eng="K" class="key keyk key4grig"><span class="eng">K</span><span class="ru">Л</span>
+          </div>
+          <div data-ru="Д" data-eng="L" class="key keyl key4grig"><span class="eng">L</span><span class="ru">Д</span>
+          </div>
+          <div class="key semicolon key--sublegend key4grig" data-ru="Ж" data-eng=";" data-shift=":">
+            <span>&colon;</span> <span>&semi;</span> <span>Ж</span>
+          </div>
+          <div class="key quote key--sublegend key4grig" data-ru="Э" data-eng="'" data-shift='"'>
+            <span>&quot;</span> <span>&apos;</span> <span>Э</span>
+          </div>
+          <div class="key enter key--accent-color" data-key="Enter">
+            <span>&LongLeftArrow;</span>
+          </div>
+        </div>
+
+        <div class="fourth-row">
+          <div class="key shiftleft key--accent-color" data-key="ShiftL">Shift</div>
+          <div data-ru="Я" data-eng="Z" class="key keyz key4grig"><span class="eng">Z</span><span class="ru">Я</span>
+          </div>
+          <div data-ru="Ч" data-eng="X" class="key keyx key4grig"><span class="eng">X</span><span class="ru">Ч</span>
+          </div>
+          <div data-ru="С" data-eng="C" class="key keyc key4grig"><span class="eng">C</span><span class="ru">С</span>
+          </div>
+          <div data-ru="М" data-eng="V" class="key keyv key4grig"><span class="eng">V</span><span class="ru">М</span>
+          </div>
+          <div data-ru="И" data-eng="B" class="key keyb key4grig"><span class="eng">B</span><span class="ru">И</span>
+          </div>
+          <div data-ru="Т" data-eng="N" class="key keyn key4grig"><span class="eng">N</span><span class="ru">Т</span>
+          </div>
+          <div data-ru="Ь" data-eng="M" class="key keym key4grig"><span class="eng">M</span><span class="ru">Ь</span>
+          </div>
+          <div class="key comma key--sublegend key4grig" data-ru="Б" data-eng="," data-shift='<'>
+            <span>&lt;</span><span>&comma;</span><span>Б</span>
+          </div>
+          <div class="key period key--sublegend key4grig" data-ru="Ю" data-eng="." data-shift='>'>
+            <span>&gt;</span><span>&period;</span><span>Ю</span>
+          </div>
+          <div class="key slash key--sublegend key4grig" data-ru="." data-eng="/" data-shift='?,'>
+            <span>&quest;</span><span>,</span><span>.</span><span>&sol;</span>
+          </div>
+          <div class="key shiftright key--accent-color" data-key="Shift">Shift</div>
+        </div>
+
+        <div class="fifth-row">
+          <div class="key controlleft key--accent-color" data-key="CtrlL">Ctrl</div>
+          <div class="key metaleft osleft key--accent-color" aria-label="Left Windows key" data-key="Win">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4875 4875" aria-label="Left Windows key icon">
+              <path d="M0 0h2311v2310H0zm2564 0h2311v2310H2564zM0 2564h2311v2311H0zm2564 0h2311v2311H2564" />
             </svg>
           </div>
-          <div class="key arrowleft" aria-label="Left Arrow key">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              enable-background="new 0 0 32 32"
-              viewBox="0 0 32 32"
-              aria-label="Left Arrow"
-            >
-              <path
-                d="M7.701,14.276l9.586-9.585c0.879-0.878,2.317-0.878,3.195,0l0.801,0.8c0.878,0.877,0.878,2.316,0,3.194  L13.968,16l7.315,7.315c0.878,0.878,0.878,2.317,0,3.194l-0.801,0.8c-0.878,0.879-2.316,0.879-3.195,0l-9.586-9.587  C7.229,17.252,7.02,16.62,7.054,16C7.02,15.38,7.229,14.748,7.701,14.276z"
-              />
+          <div class="key altleft key--accent-color" data-key="AltL">Alt</div>
+          <div class="key space key--accent-color" aria-label="Space" data-key="Space">
+            <span>&UnderBar;&UnderBar;&UnderBar;&UnderBar;</span>
+          </div>
+          <div class="key altright key--accent-color" data-key="AltR">Alt</div>
+          <div class="key metaright osright key--accent-color" aria-label="Fn" data-key="Fn">
+            Fn
+          </div>
+          <div class="key contextmenu key--accent-color" aria-label="Context Menu key" data-key="Context">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-label="Context Menu key icon">
+              <rect x="10" y="10" width="80" height="80" rx="2" ry="2" stroke-width="7" />
+              <rect x="25" y="30" width="50" height="4.5" rx="2" ry="2" stroke-width="4.5" />
+              <rect x="25" y="47.5" width="50" height="4.5" rx="2" ry="2" stroke-width="4.5" />
+              <rect x="25" y="65" width="50" height="4.5" rx="2" ry="2" stroke-width="4.5" />
             </svg>
           </div>
-          <div class="key arrowdown" aria-label="Down Arrow key">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              enable-background="new 0 0 32 32"
-              viewBox="0 0 32 32"
-              aria-label="Down Arrow"
-            >
-              <path
-                d="M14.77,23.795L5.185,14.21c-0.879-0.879-0.879-2.317,0-3.195l0.8-0.801c0.877-0.878,2.316-0.878,3.194,0  l7.315,7.315l7.316-7.315c0.878-0.878,2.317-0.878,3.194,0l0.8,0.801c0.879,0.878,0.879,2.316,0,3.195l-9.587,9.585  c-0.471,0.472-1.104,0.682-1.723,0.647C15.875,24.477,15.243,24.267,14.77,23.795z"
-              />
-            </svg>
-          </div>
-          <div class="key arrowright" aria-label="Right Arrow key">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              enable-background="new 0 0 32 32"
-              viewBox="0 0 32 32"
-              aria-label="Right Arrow"
-            >
-              <path
-                d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z"
-              />
-            </svg>
-          </div>
-        </section>
+          <div class="key controlright key--accent-color" data-key="CtrlR">Ctrl</div>
+        </div>
+      </section>
 
-        <section class="numpad region">
-          <div class="key numlock">NumLk</div>
-          <div class="key numpaddivide">/</div>
-          <div class="key numpadmultiply">&times;</div>
-          <div class="key numpadsubtract">&minus;</div>
-          <div class="key numpad7">7</div>
-          <div class="key numpad8">8</div>
-          <div class="key numpad9">9</div>
-          <div class="key numpadadd">&plus;</div>
-          <div class="key numpad4">4</div>
-          <div class="key numpad5">5</div>
-          <div class="key numpad6">6</div>
-          <div class="key numpad1">1</div>
-          <div class="key numpad2">2</div>
-          <div class="key numpad3">3</div>
-          <div class="key numpadenter">Enter</div>
-          <div class="key numpad0">0</div>
-          <div class="key numpaddecimal">&middot;</div>
-        </section>
-      </div>
-    </main>
-    <footer class="footer">
-      <p class="footer-text">
-        
-      </p>
-    </footer>
-  </body>
+      <section class="navigation region">
+        <div class="key insert key--accent-color" data-key="Insert">Insert</div>
+        <div class="key home key--accent-color" data-key="Home">Home</div>
+        <div class="key pageup key--accent-color" data-key="PgUp">Pg Up</div>
+        <div class="key delete key--accent-color" data-key="Delete">Delete</div>
+        <div class="key end key--accent-color" data-key="End">End</div>
+        <div class="key pagedown key--accent-color" data-key="PgDn">Pg Dn</div>
+        <div class="key arrowup" aria-label="Up Arrow key" data-key="Up">
+          <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32"
+            aria-label="Up Arrow">
+            <path
+              d="M18.221,7.206l9.585,9.585c0.879,0.879,0.879,2.317,0,3.195l-0.8,0.801c-0.877,0.878-2.316,0.878-3.194,0  l-7.315-7.315l-7.315,7.315c-0.878,0.878-2.317,0.878-3.194,0l-0.8-0.801c-0.879-0.878-0.879-2.316,0-3.195l9.587-9.585  c0.471-0.472,1.103-0.682,1.723-0.647C17.115,6.524,17.748,6.734,18.221,7.206z" />
+          </svg>
+        </div>
+        <div class="key arrowleft" aria-label="Left Arrow key" data-key="Left">
+          <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32"
+            aria-label="Left Arrow">
+            <path
+              d="M7.701,14.276l9.586-9.585c0.879-0.878,2.317-0.878,3.195,0l0.801,0.8c0.878,0.877,0.878,2.316,0,3.194  L13.968,16l7.315,7.315c0.878,0.878,0.878,2.317,0,3.194l-0.801,0.8c-0.878,0.879-2.316,0.879-3.195,0l-9.586-9.587  C7.229,17.252,7.02,16.62,7.054,16C7.02,15.38,7.229,14.748,7.701,14.276z" />
+          </svg>
+        </div>
+        <div class="key arrowdown" aria-label="Down Arrow key" data-key="Down">
+          <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32"
+            aria-label="Down Arrow">
+            <path
+              d="M14.77,23.795L5.185,14.21c-0.879-0.879-0.879-2.317,0-3.195l0.8-0.801c0.877-0.878,2.316-0.878,3.194,0  l7.315,7.315l7.316-7.315c0.878-0.878,2.317-0.878,3.194,0l0.8,0.801c0.879,0.878,0.879,2.316,0,3.195l-9.587,9.585  c-0.471,0.472-1.104,0.682-1.723,0.647C15.875,24.477,15.243,24.267,14.77,23.795z" />
+          </svg>
+        </div>
+        <div class="key arrowright" aria-label="Right Arrow key" data-key="Right">
+          <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32"
+            aria-label="Right Arrow">
+            <path
+              d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194  L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587  c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z" />
+          </svg>
+        </div>
+      </section>
+
+      <section class="numpad region">
+        <div class="key numlock" data-key="Numlk">NumLk</div>
+        <div class="key numpaddivide">/</div>
+        <div class="key numpadmultiply" data-key="*">&times;</div>
+        <div class="key numpadsubtract" data-key="-">&minus;</div>
+        <div class="key numpad7" data-key="7">7</div>
+        <div class="key numpad8" data-key="8">8</div>
+        <div class="key numpad9" data-key="9">9</div>
+        <div class="key numpadadd">&plus;</div>
+        <div class="key numpad4" data-key="4">4</div>
+        <div class="key numpad5" data-key="5">5</div>
+        <div class="key numpad6" data-key="6">6</div>
+        <div class="key numpad1" data-key="1">1</div>
+        <div class="key numpad2" data-key="2">2</div>
+        <div class="key numpad3" data-key="3">3</div>
+        <div class="key numpadenter" data-key="Enter">Enter</div>
+        <div class="key numpad0" data-key="0">0</div>
+        <div class="key numpaddecimal" data-key=".">&middot;</div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="footer-text"></p>
+  </footer>
+</body>
+
 </html>

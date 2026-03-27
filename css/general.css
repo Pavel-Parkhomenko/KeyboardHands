@@ -45,9 +45,9 @@
   --color-bg: linear-gradient(
     45deg,
     #e9ecef,
-    #ced4da,
+    #576470,
     #adb5bd,
-    #eaebf1,
+    #576470,
     #c1c3d5
   );
 
@@ -61,6 +61,15 @@
     #506070,
     #14181c
   );
+
+--color-bg-title-lang: linear-gradient(45deg,
+      #FFB347,
+      #FFA559,
+      #FF9966,
+      #FF8C66,
+      #FF7F66,
+      #FF9966,
+      #FFB347);
 
   --color-bg-toggle: linear-gradient(45deg, #4dabf7, #228be6, #1c70c0, #3c56da);
 }

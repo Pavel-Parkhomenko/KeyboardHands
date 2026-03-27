@@ -1,107 +1,129 @@
-'use strict';
+'use strict'
 
+let LANG = "ENG"
+let letters = []
+let curSpan = 0;
+
+const printBoxText = document.querySelector(".container-text")
+const footerText = document.querySelector(".footer-text");
+const titleLang = document.querySelector("#title-lang");
+
+function getLet(dataset) {
+  return LANG === "ENG" ? dataset.eng : dataset.ru;
+}
 
 const handleKeyPress = function (e) {
-  e.preventDefault();
-
-  // Detect AltGr key press (Alt + Control pressed simultaneously)
-  const isAltGr = e.key === 'AltGraph';
-
-  // Ignore the left Control key if AltGr is pressed
-  if (isAltGr) {
-    document
-      .querySelector('.' + 'controlleft')
-      .classList.remove('key-pressing-simulation');
-
-    document
-      .querySelector('.' + 'controlleft')
-      .classList.remove('key--pressed');
-  }
+  e.preventDefault()
 
   const keyElement = document.querySelector('.' + e.code.toLowerCase());
 
   if (e.type === 'keydown') {
+    if (e.shiftKey && e.altKey) {
+      LANG = (LANG === "ENG" ? "RU" : "ENG")
+      titleLang.textContent = LANG
+      return
+    }
+
+    checkPressKey(getLet(keyElement.dataset) || keyElement.dataset.key);
     keyElement.classList.add('key-pressing-simulation');
-  } else if (e.type === 'keyup') {
-    keyElement.classList.remove('key-pressing-simulation');
+  } 
+  else if (e.type === 'keyup') {
+    keyElement.classList.remove('key-pressing-simulation')
   }
 
-  if (!keyElement.classList.contains('key--pressed')) {
-    keyElement.classList.add('key--pressed');
+}
+
+let curPress = 0
+
+function checkPressKey(pressedKey) {
+  footerText.textContent += pressedKey;
+  if (pressedKey === letters[curPress]) {
+    document.querySelector(".letter" + curPress)?.classList.add("letter-green");
+    curPress++;
   }
 
-  if (e.key === 'Meta' || e.key === 'OS') {
-    keyElement.classList.remove('key-pressing-simulation');
+  if(curPress === letters.length) {
+    letters = shuffleArray(letters)
+    curPress = 0
+
+    while (printBoxText.firstChild) {
+      printBoxText.removeChild(printBoxText.firstChild);
+    }
+    curSpan = 0;
+    footerText.textContent = ""
+    letters.map((letter) => createLetterSpan(letter));
   }
-};
+}
 
+function shuffleArray(arr) {
+  let shuffled = [...arr];
 
-const LANG = "ENG"
-let letters = []
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = shuffled[i];
+    shuffled[i] = shuffled[j];
+    shuffled[j] = temp;
+  }
 
-const printBoxText = document.querySelector('.container-text')
+  return shuffled;
+}
 
 function handleClickKey(e) {
-  e.preventDefault()
+  const keyElement = e.target.closest(".key")
+  if(!keyElement) return
   
-  let val = e.target.dataset.eng
+  let val = getLet(keyElement?.dataset);
 
-  if(val) {
-    letters.push(val)
-  }
+  if(val) letters.push(val)
   else {
-    val = e.target.dataset.key
-    letters.push(val)
+    val = keyElement.dataset.key;
+    if (!val) return
+    letters.push(val);
   }
 
-  const span = document.createElement('span')
-  span.textContent = val
-  // span.className = 'eng'
+  createLetterSpan(val)
+}
 
+function createLetterSpan(text) {
+  const span = document.createElement("span");
+  span.textContent = text;
+  span.className = "letter" + curSpan;
+  curSpan++;
   printBoxText.appendChild(span);
-
-  console.log(letters)
 }
 
 document.addEventListener('keydown', handleKeyPress)
 document.addEventListener('keyup', handleKeyPress)
-document.addEventListener('click', handleClickKey);
+document.querySelector(".keyboard").addEventListener("click", handleClickKey);
 
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
 const slider = document.getElementById('layoutSlider');
-
 const fullSizeLayout = document.querySelector('.full-size-layout');
 const TKLLayout = document.querySelector('.tkl-layout');
-
 const themeAndLayout = document.querySelector('.theme-and-layout');
 const keyboard = document.querySelector('.keyboard');
-// related to tkl
 const numpad = document.querySelector('.numpad');
-// related to 75% layout configuration
 const regions = document.querySelectorAll('.region');
 const functionRegion = document.querySelector('.function');
 const controlRegion = document.querySelector('.system-control');
 const navigationRegion = document.querySelector('.navigation');
 const fourthRow = document.querySelector('.fourth-row');
 const fifthRow = document.querySelector('.fifth-row');
-
-// deleted keys in 75%
 const btnScrollLock = document.querySelector('.scrolllock');
 const btnInsert = document.querySelector('.insert');
 const btnContextMenu = document.querySelector('.contextmenu');
-
-// remapped keys in 75%
 const btnDelete = document.querySelector('.delete');
 const btnHome = document.querySelector('.home');
 const btnEnd = document.querySelector('.end');
 const btnPgUp = document.querySelector('.pageup');
 const btnPgDn = document.querySelector('.pagedown');
 
-// Function to update the layout based on slider value
 function updateLayout() {
   const sliderValue = parseInt(slider.value);
 
-  // Update output text based on slider position
   switch (sliderValue) {
     case 1:
       changeToFullSize();
