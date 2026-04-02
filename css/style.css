@@ -36,48 +36,12 @@ body {
 }
 
 .slider-container {
-  width: 80%;
-  /* margin: 1.6rem auto; */
-  text-align: center;
+  margin-top: -10px;
+  margin-left: 10px;
 }
 
 .slider {
-  width: 30%;
-  transform: translateY(1.8rem);
-}
-
-/* Styling the track */
-input[type='range']::-webkit-slider-runnable-track {
-  height: 8px;
-  border-radius: 4px;
-  background: linear-gradient(to right, #555555, #f1f3f5);
-}
-
-/* Styling the thumb */
-input[type='range']::-webkit-slider-thumb {
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  background: #555; /* Thumb color */
-  cursor: pointer;
-  -webkit-appearance: none;
-  transition: all 0.3s ease; /* Smooth transition */
-  transform: translateY(-0.4rem);
-}
-
-/* Highlighting the thumb on hover */
-input[type='range']::-webkit-slider-thumb:hover {
-  box-shadow: 0 0 10px rgb(84, 84, 84, 0.4); /* Add a subtle box-shadow on hover */
-  transform: translateY(-0.4rem) scale(1.2);
-}
-
-.slider-value {
-  font-size: 2.4em;
-  padding: 4px 8px;
-  border-radius: 4px;
-  color: #555; /* Match the thumb color */
-  background: #fff; /* Background color for the value */
-  box-shadow: 0 0 10px rgb(84, 84, 84, 0.1); /* Add a subtle box-shadow to the value */
+  width: 10.0rem;
 }
 
 /* ------------------ KEYBOARD SECTION ------------------ */
@@ -405,12 +369,14 @@ input[type='range']::-webkit-slider-thumb:hover {
 }
 
 .theme-and-layout {
-  margin-top: -50px;
-  margin-bottom: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  /* margin-top: -50px; */
+  /* margin-bottom: 50px; */
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* justify-content: center; */
+
+  background-color: transparent;
 }
 
 .container-text {
@@ -421,16 +387,19 @@ input[type='range']::-webkit-slider-thumb:hover {
   color: white;
   font-size: 5.4rem;
   padding: 0;
-  
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
   overflow-x: hidden;
   overflow-y: hidden;
-
   border-radius: 10px;
+  margin-top: 10px;
+}
+
+.special-text {
+  height: 4.7rem;
+  font-size: 2.7rem;
 }
 
 .eng {
@@ -461,8 +430,21 @@ input[type='range']::-webkit-slider-thumb:hover {
   align-items: center;
 }
 
+.letter-special {
+  display: inline-block;
+  width: 3px;
+  height: 15px;
+  background-color: rgb(204, 204, 13);
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
 .letter-green {
   color: green;
+}
+
+.letter-spec-green {
+  background-color: green;
 }
 
 #title-lang {

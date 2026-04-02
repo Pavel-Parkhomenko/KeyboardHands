@@ -7,6 +7,7 @@ let curSpan = 0;
 const printBoxText = document.querySelector(".container-text")
 const footerText = document.querySelector(".footer-text");
 const titleLang = document.querySelector("#title-lang");
+const specialBoxText = document.querySelector(".special-text");
 
 function getLet(dataset) {
   return LANG === "ENG" ? dataset.eng : dataset.ru;
@@ -37,9 +38,16 @@ let curPress = 0
 
 function checkPressKey(pressedKey) {
   footerText.textContent += pressedKey;
-  if (pressedKey === letters[curPress]) {
+
+  if (pressedKey === letters[curPress].val) {
     document.querySelector(".letter" + curPress)?.classList.add("letter-green");
     curPress++;
+
+    if(letters[curPress].isSpec) {
+      document
+        .querySelector(".letter" + curPress)
+        ?.classList.add("letter-spec-green");
+    }
   }
 
   if(curPress === letters.length) {
@@ -51,7 +59,7 @@ function checkPressKey(pressedKey) {
     }
     curSpan = 0;
     footerText.textContent = ""
-    letters.map((letter) => createLetterSpan(letter));
+    letters.map((letter) => createLetterSpan(letter.val, letter.isSpec));
   }
 }
 
@@ -74,22 +82,38 @@ function handleClickKey(e) {
   
   let val = getLet(keyElement?.dataset);
 
-  if(val) letters.push(val)
+  if(val) {
+    letters.push({val, isSpec: false})
+    createLetterSpan(val);
+  }
   else {
     val = keyElement.dataset.key;
     if (!val) return
-    letters.push(val);
+    
+    letters.push({ val, isSpec: true });
+    createLetterSpan(val, true);
   }
-
-  createLetterSpan(val)
 }
 
-function createLetterSpan(text) {
-  const span = document.createElement("span");
-  span.textContent = text;
-  span.className = "letter" + curSpan;
+function createLetterSpan(text, isSpecial) {
+  let span = document.createElement("span");
+
+  if (isSpecial) {
+    span.classList.add("letter" + curSpan);
+    span.classList.add("letter-special");
+    printBoxText.appendChild(span);
+
+    span = document.createElement("span");
+    span.textContent = text;
+    span.className = "letter" + curSpan;
+    specialBoxText.appendChild(span);
+  } else {
+    span.textContent = text;
+    span.className = "letter" + curSpan;
+    printBoxText.appendChild(span);
+  }
+
   curSpan++;
-  printBoxText.appendChild(span);
 }
 
 document.addEventListener('keydown', handleKeyPress)
